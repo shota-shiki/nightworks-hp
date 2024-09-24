@@ -5,21 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
+            e.preventDefault(); // すべてのデフォルト動作を防ぐ
             const href = item.getAttribute('href');
-            if (href.startsWith('https://about.night-works.jp/#')) {
-                e.preventDefault();
-                const hash = href.split('#')[1];
+            const url = new URL(href, window.location.origin);
+
+            if (url.hostname === 'about.night-works.jp') {
                 if (window.location.hostname === 'about.night-works.jp') {
                     // 同じドメイン内での遷移
-                    history.pushState(null, '', `#${hash}`);
+                    const hash = url.hash.substring(1);
                     const targetSection = document.getElementById(hash);
                     if (targetSection) {
+                        history.pushState(null, '', url.hash);
                         targetSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 } else {
                     // 別ドメインからの遷移
                     window.location.href = href;
                 }
+            } else {
+                // その他のリンク（例：ログインページ）
+                window.location.href = href;
             }
         });
     });
