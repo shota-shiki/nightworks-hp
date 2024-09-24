@@ -3,13 +3,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('section');
 
+    // ハッシュリンクの処理を関数化
+    function handleHashLink(hash) {
+        if (hash) {
+            const targetId = hash.substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }, 0);
+            }
+        }
+    }
+
+    // ページ読み込み時にハッシュを処理
+    handleHashLink(window.location.hash);
+
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = item.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            const targetHash = item.getAttribute('href').split('#')[1];
+            history.pushState(null, '', `#${targetHash}`);
+            handleHashLink(`#${targetHash}`);
         });
+    });
+
+    window.addEventListener('popstate', () => {
+        handleHashLink(window.location.hash);
     });
 
     window.addEventListener('scroll', () => {
@@ -27,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navItems.forEach(item => {
             item.classList.remove('current');
-            if (item.getAttribute('href').substring(1) === current) {
+            if (item.getAttribute('href').split('#')[1] === current) {
                 item.classList.add('current');
             }
         });
