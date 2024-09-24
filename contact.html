@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <script src="./js/scripts.js"></script>
+    <title>ナイトワークス｜お問い合わせ</title>
+</head>
+<body>
+    <div class="floatingMenu">
+        <a href="https://night-works.jp/signup">ワーカー登録はこちら</a>
+        <a href="https://night-works.jp/signup">事業者登録はこちら</a>
+    </div>
+    <header>
+        <div class="headerContents">
+            <img class="header-logo" src="./img/header-logo.png" alt="NightWorks">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <a href="#top" class="nav-item current">トップ</a>
+                <a href="#features" class="nav-item">特徴</a>
+                <a href="#examples" class="nav-item">仕事例</a>
+                <a href="#howto" class="nav-item">利用方法・料金</a>
+                <a href="#faq" class="nav-item">よくある質問</a>
+                <a href="#news" class="nav-item">ニュース</a>
+                <a href="https://night-works.jp/login" class="login">ログイン</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="topBanner">
+            <div class="topBannerContents">
+                <h2>お問い合わせ</h2>
+                <img src="./img/topBanner.png" alt="">
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contactContents">
+                <div>
+                    <label for="">【お知らせ】</label>
+                    <p>お問い合わせへの回答は原則24時間以内に行なっておりますが、休日・祝日を挟む場合には明けてからのご返信となります。ご了承ください。<br>また、メールアドレスの入力間違い、迷惑メールボックスへの受信にはご注意ください。<br>バグの修正やアップデートについては<a href="https://about.night-works.jp/#news">ニュース</a>にて更新しています。</p>
+                </div>
+                <form id="contactForm" action="info@night-works.jp" method="post" enctype="text/plain">
+                    <label for="email">メールアドレス:</label>
+                        <input type="email" id="email" name="email" required>
+                    <label for="userType">ユーザー種別:</label>
+                        <select id="userType" name="userType" required>
+                            <option value="">選択してください</option>
+                            <option value="worker">ワーカー</option>
+                            <option value="employer">事業者</option>
+                        </select>
+                    <label for="message">お問い合わせ内容:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="attachment">添付ファイル (任意):</label>
+                        <input type="file" id="attachment" name="attachment">
+                    <button type="submit">送信</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footerContents">
+            <div class="footerLeft">
+                <img src="./img/footer-logo.png" alt="#闇バイトやめてナイトワークやれ!! NightWorks">
+                <a href="https://night-works.jp/workers/login">ワーカーログイン</a>
+                <a href="https://night-works.jp/employers/login">事業者ログイン</a>
+            </div>
+            <div class="footerRight">
+                <h2>その他メニュー</h2>
+                <nav>
+                    <a href="https://about.night-works.jp/info">運営情報</a>
+                    <a href="https://about.night-works.jp/contact">お問い合わせ</a>
+                    <a href="https://about.night-works.jp/terms">利用規約</a>
+                    <a href="https://about.night-works.jp/privacy">プライバシーポリシー</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
