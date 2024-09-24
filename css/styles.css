@@ -975,11 +975,11 @@ footer {
     }
     .footerLeft {
         width: 90%;
-        text-align: center;
+        margin: 0 auto;
     }
     .footerLeft img {
         margin: 0 auto;
-        width: 90%;
+        width: 95%;
     }
     .footerLeft a {
         display: block;
@@ -1001,7 +1001,7 @@ footer {
     }
     .footerRight {
         width: 90%;
-        text-align: center;
+        margin: 0 auto;
     }
     .footerRight h2 {
         font-weight: bold;
