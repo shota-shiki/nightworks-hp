@@ -3,33 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('section');
 
-    // ハッシュリンクの処理を関数化
-    function handleHashLink(hash) {
-        if (hash) {
-            const targetId = hash.substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                setTimeout(() => {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }, 0);
-            }
-        }
-    }
-
-    // ページ読み込み時にハッシュを処理
-    handleHashLink(window.location.hash);
-
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetHash = item.getAttribute('href').split('#')[1];
-            history.pushState(null, '', `#${targetHash}`);
-            handleHashLink(`#${targetHash}`);
+            const href = item.getAttribute('href');
+            if (href.startsWith('https://about.night-works.jp/#')) {
+                e.preventDefault();
+                const hash = href.split('#')[1];
+                if (window.location.hostname === 'about.night-works.jp') {
+                    // 同じドメイン内での遷移
+                    history.pushState(null, '', `#${hash}`);
+                    const targetSection = document.getElementById(hash);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    // 別ドメインからの遷移
+                    window.location.href = href;
+                }
+            }
         });
-    });
-
-    window.addEventListener('popstate', () => {
-        handleHashLink(window.location.hash);
     });
 
     window.addEventListener('scroll', () => {
@@ -105,5 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('active');
             });
         });
+    }
+
+    // ページ読み込み時にハッシュを処理
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const targetSection = document.getElementById(hash);
+        if (targetSection) {
+            setTimeout(() => {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }, 0);
+        }
     }
 });
