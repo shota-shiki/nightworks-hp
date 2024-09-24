@@ -2,8 +2,8 @@ body {
     margin: 0;
     font-family:"Century Gothic", sans-serif;
 }
-/* 開発用補助線
-*{
+/* 開発用補助線 */
+/* * {
     outline: 2px red solid;
 } */
 
@@ -232,8 +232,8 @@ header {
     margin-top: 80px;
 }
 #top h2 {
-    font-size: 24px;
-    padding-left: 8em;
+    font-size: 20px;
+    padding-left: 6em;
     margin: 1rem 0;
     width: 150%;
 }
@@ -250,8 +250,8 @@ header {
 }
 #top h3 {
     font-family: "Yusei Magic", sans-serif;
-    font-size: 24px;
-    padding-left: 8em;
+    font-size: 20px;
+    padding-left: 6em;
     margin: 0 0;
     width: 150%;
 }
@@ -313,7 +313,7 @@ picture {
         margin-top: 0;
     }
     #top h2 {
-        font-size: 20px;
+        font-size: 18px;
         padding: 0;
         margin: 1rem 0;
         width: 100%;
@@ -324,11 +324,11 @@ picture {
     .mobile-top-logo {
         display: block;
         margin: 0 auto;
-        width: 90%;
+        width: 80%;
     }
     #top h3 {
         font-family: "Yusei Magic", sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         padding: 0;
         margin: 1.5rem 0;
         width: 100%;
@@ -343,9 +343,10 @@ picture {
     }
     .mobile-features {
         display: block;
-        width: 195px;
-        height: 195px;
-        margin-left: 1rem;
+        width: 180px;
+        height: 180px;
+        margin-left: 2rem;
+        margin-top: 2rem;
     }
     .staff {
         display: none;
@@ -355,7 +356,7 @@ picture {
         position: absolute;
         right: 0;
         bottom: 0;
-        height: 100%;
+        height: 90%;
     }
 }
 
@@ -421,7 +422,7 @@ picture {
         margin: 0 20px;
     }
     .featuresContents img{
-        width: 80%;
+        width: 70%;
         margin: 30px auto 60px;
         display: flex;
     }
@@ -489,7 +490,7 @@ picture {
         margin: 0 20px;
     }
     .examplesContents img {
-        width: 80%;
+        width: 70%;
         margin: 40px 30px 0;
         display: flex;
         margin: 30px auto 60px;
@@ -562,6 +563,7 @@ picture {
         padding: 30px 0;
     }
     .howtoContents {
+        height: 100%;
         max-width: 430px;
         margin: 0 auto;
         color: white;
@@ -586,18 +588,18 @@ picture {
     .howtoUser {
         background: #191f36;
         margin: 30px;
-        font-size: 16px;
+        font-size: 12px;
     }
     .howtoUser h3 {
         background: #242a40;
     }
     .howtoUser h4 {
-        font-size: 48px;
+        font-size: 40px;
         margin-bottom: 0;
         margin-top: 1em;
     }
     .howtoUser p {
-        font-size: 16px;
+        font-size: 12px;
         margin: 1rem 2rem;
         text-align: left;
     }
@@ -613,19 +615,19 @@ picture {
         flex-direction: column;
     }
     .howtoStep div {
-        width: 90%;
+        width: 80%;
         padding: 0;
         margin: 0 auto;
     }
     .howtoStep div h5 {
-        font-size: 24px;
+        font-size: 20px;
         margin: 1em;
     }
     .howtoStep div p {
         margin: auto 0;
     }
     .howtoStep div img {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -783,7 +785,7 @@ picture {
         background-color: rgba(255, 255, 255, 0);
         border-bottom: 0.25rem solid;
         color: #d3d3d3;
-        font-size: 20px;
+        font-size: 18px;
     }
     .tab-button.active {
         color: orange;
@@ -808,7 +810,7 @@ picture {
         border: none;
         text-align: left;
         cursor: pointer;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
     }
     .question-text {
@@ -818,13 +820,13 @@ picture {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         margin-left: 10px;
     }
     .icon-plus, .icon-minus {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         color: white;
     }
     .icon-minus {
@@ -844,6 +846,7 @@ picture {
         background-image: linear-gradient(to right, #030919, #0A1D57);
         color: white;
         text-align: left;
+        font-size: 12px;
     }
     .accordion-content.active {
         max-height: 1000px;
@@ -971,23 +974,23 @@ footer {
         align-items: center;
     }
     .footerLeft {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
     .footerLeft img {
         margin: 0 auto;
-        width: 100%;
+        width: 90%;
     }
     .footerLeft a {
         display: block;
         margin: auto;
-        font-size: 20px;
+        font-size: 16px;
         text-decoration: none;
         background-color: #122E86;
         color: white;
         border-radius: 9999px;
         padding: 1rem 0;
-        width: 75%;
+        width: 70%;
     }
     .footerLeft a:nth-child(2) {
         margin-top: 30px;
@@ -997,7 +1000,7 @@ footer {
         margin-bottom: 30px;
     }
     .footerRight {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
     .footerRight h2 {
@@ -1008,7 +1011,7 @@ footer {
         display: block;
         margin: 0 auto 1rem;
         color: black;
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
