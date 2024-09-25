@@ -1225,29 +1225,6 @@ footer {
 .contactContents div a {
     color: white;
 }
-#contactForm {
-    display: flex;
-    flex-direction: column;
-}
-#contactForm label {
-    margin-top: 10px;
-}
-#contactForm input, select, textarea {
-    margin-bottom: 10px;
-}
-#contactForm input[type="file"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-#contactForm button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #122E88;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-}
 @media screen and (max-width: 959px) {
     #contact {
         background: linear-gradient(to right, #050F31, #122E88);
@@ -1269,29 +1246,6 @@ footer {
     }
     .contactContents div a {
         color: white;
-    }
-    #contactForm {
-        display: flex;
-        flex-direction: column;
-    }
-    #contactForm label {
-        margin-top: 10px;
-    }
-    #contactForm input, select, textarea {
-        margin-bottom: 10px;
-    }
-    #contactForm input[type="file"] {
-        padding: 5px;
-        border: 1px solid #ccc;
-    }
-    #contactForm button {
-        margin-top: 10px;
-        padding: 10px;
-        background-color: #122E88;
-        color: white;
-        border: none;
-        cursor: pointer;
-        width: 20%;
     }
 }
 
