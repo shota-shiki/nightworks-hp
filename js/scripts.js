@@ -67,11 +67,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // お問い合わせ完了ダイアログ
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('送信が完了しました');
-            this.reset();
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // フォームデータを取得
+        const formData = new FormData(this);
+
+        // Formspreeにデータを送信
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert('送信が完了しました');
+                this.reset();
+            } else {
+                alert('送信に失敗しました。もう一度お試しください。');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('エラーが発生しました。もう一度お試しください。');
         });
+    });
     }
 
     // ハンバーガーメニュー
