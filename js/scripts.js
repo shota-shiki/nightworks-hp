@@ -64,34 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // お問い合わせ完了ダイアログ
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // 送信ボタンを無効化
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = '送信中...';
-
-            // EmailJS を使用してフォームデータを送信
-            emailjs.sendForm('service_2051wh9', 'template_e72j43v', this)
-                .then(function() {
-                    alert('送信が完了しました');
-                    contactForm.reset();
-                }, function(error) {
-                    console.error('Error:', error);
-                    alert('送信に失敗しました。もう一度お試しください。');
-                })
-                .finally(function() {
-                    // 送信ボタンを再び有効化
-                    submitButton.disabled = false;
-                    submitButton.textContent = '送信';
-                });
-        });
-    }
-
     // ハンバーガーメニュー
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
