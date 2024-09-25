@@ -67,34 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // お問い合わせ完了ダイアログ
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // フォームデータを取得
-        const formData = new FormData(this);
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 送信ボタンを無効化
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = '送信中...';
 
-        // Formspreeにデータを送信
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.ok) {
-                alert('送信が完了しました');
-                this.reset();
-            } else {
-                alert('送信に失敗しました。もう一度お試しください。');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('エラーが発生しました。もう一度お試しください。');
+            // EmailJS を使用してフォームデータを送信
+            emailjs.sendForm('service_2051wh9', 'template_e72j43v', this)
+                .then(function() {
+                    alert('送信が完了しました');
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('Error:', error);
+                    alert('送信に失敗しました。もう一度お試しください。');
+                })
+                .finally(function() {
+                    // 送信ボタンを再び有効化
+                    submitButton.disabled = false;
+                    submitButton.textContent = '送信';
+                });
         });
-    });
     }
 
     // ハンバーガーメニュー
