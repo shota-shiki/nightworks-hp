@@ -1225,6 +1225,10 @@ footer {
 .contactContents div a {
     color: white;
 }
+.contactContents iframe {
+    margin: 0 auto;
+    width: 100%;
+}
 @media screen and (max-width: 959px) {
     #contact {
         background: linear-gradient(to right, #050F31, #122E88);
