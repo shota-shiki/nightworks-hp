@@ -1,34 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // カレントメニュー
+    // カレントメニューとナビゲーション
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('section');
 
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.preventDefault(); // すべてのデフォルト動作を防ぐ
             const href = item.getAttribute('href');
-            const url = new URL(href, window.location.origin);
-
-            if (url.hostname === 'about.night-works.jp') {
-                if (window.location.hostname === 'about.night-works.jp') {
-                    // 同じドメイン内での遷移
-                    const hash = url.hash.substring(1);
-                    const targetSection = document.getElementById(hash);
-                    if (targetSection) {
-                        history.pushState(null, '', url.hash);
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                } else {
-                    // 別ドメインからの遷移
-                    window.location.href = href;
-                }
-            } else {
-                // その他のリンク（例：ログインページ）
+            
+            if (href.startsWith('https://about.night-works.jp/')) {
+                e.preventDefault();
                 window.location.href = href;
             }
+            // 同一ページ内のアンカーリンクの場合はデフォルトの動作を許可
         });
     });
 
+    // スクロール処理
     window.addEventListener('scroll', () => {
         let current = '';
         const scrollY = window.pageYOffset;
@@ -50,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // よくある質問
+    // よくある質問（タブ切り替え）
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -66,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // アコーディオン
     const accordionHeaders = document.querySelectorAll('.accordion-header');
 
     accordionHeaders.forEach(header => {
@@ -104,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ページ読み込み時にハッシュを処理
+    // ページ読み込み時のハッシュ処理
     if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         const targetSection = document.getElementById(hash);
