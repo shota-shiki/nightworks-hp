@@ -544,11 +544,13 @@ picture {
 }
 .howtoStep {
     display: flex;
-    justify-content: center;
     margin: 50px 0;
 }
 .howtoStep div {
     width: 50%;
+}
+.howtoStep div img {
+    height: 75%;
 }
 .howtoStep div h5 {
     font-size: 32px;
