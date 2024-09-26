@@ -550,7 +550,7 @@ picture {
     width: 50%;
 }
 .howtoStep div img {
-    height: 75%;
+    width: 75%;
 }
 .howtoStep div h5 {
     font-size: 32px;
