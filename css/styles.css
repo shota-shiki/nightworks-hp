@@ -888,6 +888,9 @@ picture {
     background-color: white;
     margin: 0 20px;
 }
+.twitter-tweet {
+    margin: 0 auto;
+}
 @media screen and (max-width: 959px) {
     #news {
         background: #050C25;
