@@ -24,7 +24,7 @@ body {
     text-decoration: none;
     font-size: 32px;
     padding: 1em 0;
-    border: 1px solid white;
+    border: 0.3px solid lightgray;
 }
 .floatingMenu a:last-child {
     width: 50%;
@@ -33,7 +33,7 @@ body {
     text-decoration: none;
     font-size: 32px;
     padding: 1em 0;
-    border: 1px solid white;
+    border: 0.3px solid lightgray;
 }
 @media screen and (max-width: 959px) {
 	.floatingMenu {
@@ -71,6 +71,7 @@ header {
     position: fixed;
     z-index: 100;
     top: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .headerContents {
     width: 90%;
